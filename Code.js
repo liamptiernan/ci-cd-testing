@@ -1,3 +1,3 @@
 function myFunction() {
-  const test = 'hello test';
+  const test = 'hello test test';
 }
