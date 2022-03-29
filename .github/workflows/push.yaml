@@ -9,6 +9,7 @@ jobs:
   build:
       runs-on: ubuntu-latest
       steps:
+      - uses: actions/checkout@v2
       - uses: daikikatsuragawa/clasp-action@v1.1.0
         with:
           accessToken: ${{ secrets.ACCESS_TOKEN }}
