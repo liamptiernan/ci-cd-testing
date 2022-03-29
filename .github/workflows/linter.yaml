@@ -13,22 +13,22 @@ on:
     branches: [ main ]
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: npm install
-    - name: Run ESLint
-      run: npx eslint ./
+      runs-on: ubuntu-latest
+      steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: npm install
+      - name: Run ESLint
+        run: npx eslint ./
   push_gas:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: daikikatsuragawa/clasp-action@v1.1.0
-      with:
-        accessToken: ${{ secrets.ACCESS_TOKEN }}
-        idToken: ${{ secrets.ID_TOKEN }}
-        refreshToken: ${{ secrets.REFRESH_TOKEN }}
-        clientId: ${{ secrets.CLIENT_ID }}
-        clientSecret: ${{ secrets.CLIENT_SECRET }}
-        scriptId: ${{ secrets.SCRIPT_ID }}
-        command: 'push'
+      runs-on: ubuntu-latest
+      steps:
+        - uses: daikikatsuragawa/clasp-action@v1.1.0
+        with:
+          accessToken: ${{ secrets.ACCESS_TOKEN }}
+          idToken: ${{ secrets.ID_TOKEN }}
+          refreshToken: ${{ secrets.REFRESH_TOKEN }}
+          clientId: ${{ secrets.CLIENT_ID }}
+          clientSecret: ${{ secrets.CLIENT_SECRET }}
+          scriptId: ${{ secrets.SCRIPT_ID }}
+          command: 'push'
